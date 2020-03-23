@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ range .Pages }}
+    {{ .Title }}<br>
+    {{/* This will only succeed if rendering of pages is enabled */}}
+    {{ with .RelPermalink }}
+      {{ . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
